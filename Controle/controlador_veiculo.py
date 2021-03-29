@@ -1,0 +1,3 @@
+class ControladorVeiculo:
+    pass
+ 
