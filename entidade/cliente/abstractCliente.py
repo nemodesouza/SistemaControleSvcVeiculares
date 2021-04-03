@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
-
-class AbstractCliente (ABC):
-    @abstractmethod
-	def __init__(self, codigo: int, nome: str, telefone: int, endereco: str):
+class AbstractCliente(ABC):
+    
+    @abstractmethod    
+    def __init__ (self, codigo: int, nome: str, telefone: int, endereco: str):
         if isinstance (codigo, int):
             self.__codigo = codigo
         if isinstance (nome, str):
@@ -15,7 +15,8 @@ class AbstractCliente (ABC):
     
     @property
     def codigo(self) -> int:
-		return self.__codigo
+        return self.__codigo
+        
     
     @codigo.setter
     def codigo(self, codigo:int):
@@ -27,17 +28,17 @@ class AbstractCliente (ABC):
         pass
     
     @property		
-	def nome(self) ->str:
-		return self.__nome
+    def nome(self) ->str:
+        return self.__nome
     
     @nome.setter
     def nome(self, nome: str):
-        is instance (nome, str):
-        self.__nome
+        if isinstance(nome, str):
+            self.__nome
 
     @property
     def telefone(self) ->str:
-		return self.__telefone
+        return self.__telefone
 
     @telefone.setter
     def telefone(self, telefone: str):
@@ -48,9 +49,9 @@ class AbstractCliente (ABC):
     def endereco(self) ->str:
         return self.__endereco
 
-    @enderecos.setter
-    def enderecos(self, enderecos: str):
-        if isinstance(enderecos, str):
-            self.__enderecos
+    @endereco.setter
+    def endereco(self, endereco: str):
+        if isinstance(endereco, str):
+            self.__endereco
     
      

@@ -9,12 +9,17 @@ from controle.controlador_revisao import ControladorRevisao
 class ControladorSistema:
     def __init__(self):
         self.__tela_sistema = TelaSistema()
+        self.__controlador_cliente = ControladorCliente(self)
 
     def inicializa_sistema(self):
         
         print("INICIALIZANDO SISTEMA")
         
         self.abre_tela()
+
+    def cadastra_cliente(self):
+        self.__controlador_cliente.abre_tela()
+
 
     def controlador_veiculos(self):
         print (">> CONTROLADOR DE VEICULOS SELECIONADO -- EBA!!!")

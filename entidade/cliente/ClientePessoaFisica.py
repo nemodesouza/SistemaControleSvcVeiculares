@@ -1,9 +1,15 @@
-from cliente.abstractCliente import AbstractCliente
-from entidade.veiculo import Veiculo
+from entidade.cliente.abstractCliente import AbstractCliente
+from entidade.veiculo.veiculo import Veiculo
  
- class clientePessoaFisica(AbstractCliente):
+class ClientePessoaFisica(AbstractCliente):
      
-     def __init__(self, codigo: int, nome: str, telefone: int, endereco: str, data_nascimento: str, cpf: str, rg: str, orgao_emissor: str, veiculo:Veiculo)
+    def __init__(self, codigo: int, nome: str, telefone: int, endereco: str, data_nascimento: str, cpf: str, rg: str, orgao_emissor: str, veiculo:Veiculo):
+         super().__init_(codigo, nome, telefone, endereco)
+         self.__data_nascimento = data_nascimento
+         self.__cpf = cpf
+         self.__rg = rg
+         self.__orgao_emissor = orgao_emissor
+         self.__veiculo = veiculo
 
     @property
     def data_nascimento(self):
@@ -37,9 +43,9 @@ from entidade.veiculo import Veiculo
         return self.__orgao_emissor
     
     @orgao_emissor.setter
-        def orgao_emissor(self):
-            if isinstance (orgao_emissor, str):
-                self.__orgao_emissor = orgao_emissor
+    def orgao_emissor(self):
+        if isinstance (orgao_emissor, str):
+            self.__orgao_emissor = orgao_emissor
 
     @property
     def veiculo(Veiculo): #confirmar se é isto mesmo
@@ -51,3 +57,4 @@ from entidade.veiculo import Veiculo
             self.__veiculo = veiculo
 
 
+ 
