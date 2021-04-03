@@ -3,7 +3,13 @@ from entidade.veiculo import Veiculo
  
  class clientePessoaFisica(AbstractCliente):
      
-     def __init__(self, codigo: int, nome: str, telefone: int, endereco: str, data_nascimento: str, cpf: str, rg: str, orgao_emissor: str, veiculo:Veiculo)
+     def __init__(self, codigo: int, nome: str, telefone: int, endereco: str, data_nascimento: str, cpf: str, rg: str, orgao_emissor: str, veiculo:Veiculo):
+         super().__init_(codigo, nome, telefone, endereco)
+         self.__data_nascimento = data_nascimento
+         self.__cpf = cpf
+         self.__rg = rg
+         self.__orgao_emissor = orgao_emissor
+         self.__veiculo = veiculo
 
     @property
     def data_nascimento(self):
@@ -51,3 +57,4 @@ from entidade.veiculo import Veiculo
             self.__veiculo = veiculo
 
 
+ 
