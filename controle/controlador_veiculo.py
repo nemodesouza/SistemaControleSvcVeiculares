@@ -32,20 +32,20 @@ class ControladorVeiculo():
         veiculo = Veiculo(novo_modelo, novo_ano, nova_placa, nova_quilometragem)
         self.__veiculo == veiculo
 
-    def excluir_veiculo(self, veiculo):
-        #del veiculo 
-        pass   
-
-    def mostrar_veiculo(self, veiculo):
-        #self.__tela_veiculo.mostrar_dados(veiculo)
-        pass 
-
+    def excluir_veiculo(self):
+      veiculo = self.__veiculo 
+      del (veiculo)
+        
+    def mostrar_veiculo(self):
+      veiculo = self.__veiculo
+      self.__tela_veiculo.mostrar_dados(veiculo)
+       
     def voltar(self):
         pass
     
     def abre_tela(self):
         lista_opcoes = {1: self.cadastrar_veiculo, 2: self.editar_veiculo, 3: self.excluir_veiculo, 
-        4: self.mostrar_veiculo, 5: self.voltar}
+        4: self.mostrar_veiculo, 0: self.voltar}
 
         lista_opcoes[self.__tela_veiculo.tela_opcoes()]()
 

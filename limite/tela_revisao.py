@@ -4,7 +4,7 @@ class TelaRevisao():
         print("-------- Revisao ---------")
         print("Escolha sua opcao")
         print("1 - Iniciar revisao")
-        print("2 - Voltar")
+        print("0 - Voltar")
         opcao = int(input("Escolha a opcao: "))
         return opcao
 

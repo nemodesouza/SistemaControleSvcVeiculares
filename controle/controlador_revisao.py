@@ -9,7 +9,7 @@ class ControladorRevisao():
         
 
     def abre_tela(self):
-        lista_opcoes = {1: self.iniciar_revisao, 2: self.voltar}
+        lista_opcoes = {1: self.iniciar_revisao, 0: self.voltar}
 
         continua = True
         while continua:

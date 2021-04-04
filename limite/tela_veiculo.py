@@ -7,7 +7,7 @@ class TelaVeiculo():
         print("2 - Editar veiculo")
         print("3 - Excluir veiculo")
         print("4 - Mostrar veiculo")
-        print("5 - Voltar")
+        print("0 - Voltar")
         opcao = int(input("Escolha a opcao: "))
         return opcao
 
