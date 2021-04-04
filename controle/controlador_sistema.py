@@ -1,32 +1,36 @@
 from limite.tela_sistema import TelaSistema
-from controle.controlador_veiculo import ControladorVeiculo
-from controle.controlador_cliente import ControladorCliente
-from controle.controlador_relatorio import ControladorRelatorio
-from controle.controlador_revisao import ControladorRevisao 
+from controle.controlador_revisao import ControladorRevisao
+from controle.controlador_veiculo import ControladorVeiculo 
 
+class ControladorSistema():
 
-
-class ControladorSistema:
     def __init__(self):
-        self.__tela_sistema = TelaSistema()
+        self.__controlador_veiculo = ControladorVeiculo(self)
+        self.__controlador_revisao = ControladorRevisao(self)
+        self.tela_sistema = TelaSistema()
 
     def inicializa_sistema(self):
-        
-        print("INICIALIZANDO SISTEMA")
-        
         self.abre_tela()
 
-    def controlador_veiculos(self):
-        print (">> CONTROLADOR DE VEICULOS SELECIONADO")
-    
     def abre_tela(self):
-        print(">>Abrindo tela")
-        lista_opcoes = {1: self.controlador_veiculos}
+
+        lista_opcoes = {1: self.iniciar_veiculo, 2: self.iniciar_revisao, 0: self.encerra_sistema}
 
         while True:
 
-            opcao_escolhida =       self.__tela_sistema.tela_opcoes()
+            opcao_escolhida = self.tela_sistema.tela_opcoes()
 
-            servico_escolhido = lista_opcoes[opcao_escolhida]
+            funcao_escolhida = lista_opcoes[opcao_escolhida]
 
-            servico_escolhido()
+            funcao_escolhida()
+
+    def iniciar_revisao(self):
+        # Chama o controlador de Revisao
+        self.__controlador_revisao.abre_tela() 
+
+    def iniciar_veiculo(self):
+        # Chama o controlador de Veiculo
+        self.__controlador_veiculo.abre_tela()
+
+    def encerra_sistema(self):
+        exit(0)
