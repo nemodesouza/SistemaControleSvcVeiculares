@@ -11,3 +11,4 @@ class Substituicao():
     @property
     def descricao(self) -> str:
         return self.__descricao 
+

@@ -1,7 +1,6 @@
 class TelaSistema:
 
     def tela_opcoes(self):
-
         print("")
         print("")
         print("====================================")
@@ -20,5 +19,3 @@ class TelaSistema:
                 
         opcao = int(input("Escolha a opcao:"))
         return opcao
-
-        
