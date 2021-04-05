@@ -14,7 +14,8 @@ class TelaSistema:
         print("")
         print("------- Selecione o assunto: -------")
         print("1 - Veiculos")
-        print("2 - Clientes")
+        print("2 - Revisao")
+        print("3 - Clientes")
         print("0 - Sair")
                 
         opcao = int(input("Escolha a opcao:"))
