@@ -14,9 +14,10 @@ class ControladorVeiculo():
         veiculo = Veiculo(dados_veiculo["modelo"], dados_veiculo["ano"], dados_veiculo["placa"], 
         dados_veiculo["quilometragem"])
 
-        self.__veiculo == veiculo
+        self.__veiculo = veiculo
 
     def editar_veiculo(self):
+      
         novo_modelo = input("Informe o novo modelo:")
         self.__veiculo.modelo = novo_modelo
 
@@ -29,8 +30,8 @@ class ControladorVeiculo():
         nova_quilometragem = input("Informe a nova quilometragem:")
         self.__veiculo.quilometragem = nova_quilometragem
 
-        veiculo = Veiculo(novo_modelo, novo_ano, nova_placa, nova_quilometragem)
-        self.__veiculo == veiculo
+        novo_veiculo = Veiculo(novo_modelo, novo_ano, nova_placa, nova_quilometragem)
+        self.__veiculo = novo_veiculo
 
     def excluir_veiculo(self):
       veiculo = self.__veiculo 

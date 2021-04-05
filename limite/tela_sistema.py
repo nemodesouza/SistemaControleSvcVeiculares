@@ -6,5 +6,5 @@ class TelaSistema:
         print("1 - Veiculo")
         print("2 - Revisao")
         print("0 - Finalizar sistema")
-        opcao = int(input("Escolha a opcao: "))
+        opcao = int(input("Escolha a opcao: ")) 
         return opcao
