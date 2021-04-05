@@ -36,7 +36,6 @@ class ControladorCliente():
         self.abre_tela()
 
 
-
     def cadastra_pessoa_juridica(self):
 
         # Método para fazer o cadastro de cliente pessoa física
@@ -50,10 +49,10 @@ class ControladorCliente():
         self.abre_tela()
 
     def remover_cliente(self):
-        print (">>> Aqui as opções de REMOVER cliente")
+        self.abrir_area_em_contrucao()
     
     def editar_cliente(self):
-        print (">>> Aqui as opções de EDITAR cliente")
+        self.abrir_area_em_contrucao()
     
     def listar_clientes(self):
 
@@ -74,8 +73,8 @@ class ControladorCliente():
         for cliente in self.__clientes_pj:
             self.__tela_cliente.listar_clientes_pj({"codigo": cliente.codigo, "nome": cliente.nome, "telefone": cliente.telefone, "endereco": cliente.endereco, "data_fundacao": cliente.data_fundacao, "cnpj": cliente.cnpj, "veiculo": cliente.veiculo})
     
-    def pegar_cliente_pelo_nome(Cliente):
-        print (">>> Aqui as opções de PEGAR cliente pelo nome")
+    def pegar_cliente_pelo_nome(self):
+        self.abrir_area_em_contrucao()
         
     def abre_tela(self):
         lista_opcoes = {1: self.cadastrar_cliente, 2: self.remover_cliente,  3: self.editar_cliente, 4: self.listar_clientes, 5: self.pegar_cliente_pelo_nome, 0: self.voltar}
@@ -91,3 +90,11 @@ class ControladorCliente():
     def voltar_tela_cliente(self):
         self.abre_tela()
 
+    def abrir_area_em_contrucao(self):
+        
+        voltar = { 0: self.voltar}
+
+        continua_tela_cliente = True
+
+        while True:
+            voltar[self.__tela_cliente.area_em_construcao()]()

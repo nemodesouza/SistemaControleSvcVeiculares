@@ -16,6 +16,14 @@ class TelaSistema:
         print("2 - Revisao")
         print("3 - Clientes")
         print("0 - Sair")
-                
-        opcao = int(input("Escolha a opcao:"))
-        return opcao
+
+
+        while True:
+            try:
+                opcao = int(input("Escolha a opção: "))
+
+            except ValueError:
+                print("Conteúdo Inválido. Digite o conteúdo correto.")
+            else:
+                return opcao
+
