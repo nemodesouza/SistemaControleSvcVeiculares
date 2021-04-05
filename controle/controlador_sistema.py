@@ -5,48 +5,38 @@ from controle.controlador_relatorio import ControladorRelatorio
 from controle.controlador_revisao import ControladorRevisao 
 
 
-
 class ControladorSistema:
     def __init__(self):
         self.__tela_sistema = TelaSistema()
+        #self.__controlador_veiculo = ControladorVeiculo(self)
+        #self.__controlador_revisao = ControladorRevisao(self)
         self.__controlador_cliente = ControladorCliente(self)
 
     def inicializa_sistema(self):
+        self.abre_tela()
 
-        self.abrir_tela()
+    def abre_tela(self):
+        
+        lista_opcoes = {1: self.iniciar_veiculo, 2: self.iniciar_revisao, 3: self.abrir_controlador_cliente, 0: self.encerra_sistema}
+
+        while True:
+
+            opcao_escolhida = self.__tela_sistema.tela_opcoes()
+
+            funcao_escolhida = lista_opcoes[opcao_escolhida]
+
+            funcao_escolhida()
 
     def abrir_controlador_cliente(self):
-        self.__controlador_cliente.abrir_tela()
+        self.__controlador_cliente.abre_tela()
 
-    def encerrar_sistema(self):
-        try:
-            1/0
-        except:
-            pass
-        
-        
+    def iniciar_revisao(self):
+        # Chama o controlador de Revisao
+        self.__controlador_revisao.abre_tela() 
 
-    def controlador_veiculos(self):
-        print (">> CONTROLADOR DE VEICULOS SELECIONADO -- EBA!!!")
-    
-    def abrir_tela(self):
-        
-        lista_opcoes = {1: self.controlador_veiculos, 2: self.abrir_controlador_cliente, 0: self.encerrar_sistema}
+    def iniciar_veiculo(self):
+        # Chama o controlador de Veiculo
+        self.__controlador_veiculo.abre_tela()
 
-        continua = True
-
-        try:
-            while continua == True:
-
-                opcao_escolhida =       self.__tela_sistema.tela_opcoes()
-
-                servico_escolhido = lista_opcoes[opcao_escolhida]
-
-                if servico_escolhido() != servico_escolhido(0):
-                    servico_escolhido()
-
-                else:
-                    1/0
-        except:
-            pass
-        
+    def encerra_sistema(self):
+        exit(0)

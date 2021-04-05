@@ -7,7 +7,7 @@ class AbstractCliente(ABC):
         if isinstance (codigo, int):
             self.__codigo = codigo
         if isinstance (nome, str):
-            self.__nome = mome
+            self.__nome = nome
         if isinstance (telefone, int):
             self.__telefone = telefone
         if isinstance (endereco, str):
