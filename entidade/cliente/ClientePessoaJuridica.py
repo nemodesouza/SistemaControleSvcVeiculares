@@ -4,7 +4,7 @@ from entidade.veiculo.veiculo import Veiculo
 class ClientePessoaJuridica(AbstractCliente):
         
     def __init__(self, codigo: int, nome: str, telefone: int,endereco: str, data_fundacao: str, cnpj: str, veiculo:Veiculo):
-            super().__init_(codigo, nome, telefone, endereco)
+            super().__init__(codigo, nome, telefone, endereco)
             self.__data_fundacao = data_fundacao
             self.__cnpj = cnpj
             self.__veiculo = veiculo

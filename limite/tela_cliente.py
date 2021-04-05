@@ -29,9 +29,9 @@ class TelaCliente:
         print("----------- PESSOA FÍSICA ----------")
         
         #gera o código automaticamente (verificar como fazer isso"
-        codigo = input("Defina um Código para o Cliente: ")
+        codigo = int(input("Defina um Código para o Cliente: "))
         nome = input("Nome: ")
-        telefone = input("Telefone: ")
+        telefone = int(input("Telefone: "))
         endereco = input("Endereço: ")
         data_nascimento = input("Data de Nascimento: ")
         cpf = input("CPF: ")
@@ -42,8 +42,23 @@ class TelaCliente:
         return {"codigo":codigo, "nome": nome, "telefone": telefone, "endereco": endereco, "data_nascimento": data_nascimento, "cpf": cpf, "rg": rg, "orgao_emissor": orgao_emissor, "veiculo": veiculo}
 
     def coleta_dados_pessoa_juridica(self):
+
         # coleta dados de cliente pessoa jurídica
+        
         print("Abrir tela pra coletar dados Pessia Física")
+        print("-------- Cadastrar Cliente ---------")
+        print("--------- PESSOA JURÍDICA ----------")
+        
+        #gera o código automaticamente (verificar como fazer isso"
+        codigo = int(input("Defina um Código para o Cliente: "))
+        nome = input("Razão Social: ")
+        telefone = int(input("Telefone: "))
+        endereco = input("Endereço: ")
+        data_fundacao = input("Data de Fundação: ")
+        cnpj = input("CNPJ: ")
+        veiculo = input("Veículo: ")
+
+        return {"codigo":codigo, "nome": nome, "telefone": telefone, "endereco": endereco, "data_fundacao": data_fundacao, "cnpj": cnpj, "veiculo": veiculo}
 
     def tipo_de_cliente(self):
         # escolhe se é cliente pessoa física ou jurídica
@@ -59,8 +74,10 @@ class TelaCliente:
         opcao = int(input("Escolha a opção: "))
         return opcao
     
-    def listar_clientes(self, dados_cliente):
-        print("CÓDICO CLIENTE: ", dados_cliente["codigo"])
+    def listar_clientes_pf(self, dados_cliente):
+        print("================================")
+        print("")        
+        print("CÓDIGO CLIENTE: ", dados_cliente["codigo"])
         print("NOME CLIENTE: ", dados_cliente["nome"])
         print("FONE CLIENTE: ", dados_cliente["telefone"])
         print("END CLIENTE: ", dados_cliente["endereco"])
@@ -69,3 +86,19 @@ class TelaCliente:
         print("R.G.: ", dados_cliente["rg"])
         print("ÓRGÃO EMISSOR: ", dados_cliente["orgao_emissor"])
         print("VEÍCULO: ", dados_cliente["veiculo"])
+        print("")
+
+        
+
+    def listar_clientes_pj(self, dados_cliente):
+        print("================================")
+        print("")
+        print("CÓDIGO CLIENTE: ", dados_cliente["codigo"])
+        print("RAZÃO SOCIAL CLIENTE: ", dados_cliente["nome"])
+        print("FONE CLIENTE: ", dados_cliente["telefone"])
+        print("END CLIENTE: ", dados_cliente["endereco"])
+        print("DATA FUND..: ", dados_cliente["data_fundacao"])
+        print("CNPJ: ", dados_cliente["cnpj"])
+        print("VEÍCULO: ", dados_cliente["veiculo"])
+        print("")
+
