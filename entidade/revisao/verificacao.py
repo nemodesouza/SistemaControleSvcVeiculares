@@ -11,3 +11,4 @@ class Verificacao():
     @property
     def descricao(self) -> str:
         return self.__descricao 
+
