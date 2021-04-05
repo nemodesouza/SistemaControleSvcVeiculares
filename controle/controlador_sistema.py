@@ -7,8 +7,8 @@ class ControladorSistema():
 
     def __init__(self):
         self.__tela_sistema = TelaSistema()
-        #self.__controlador_veiculo = ControladorVeiculo(self)
-        #self.__controlador_revisao = ControladorRevisao(self)
+        self.__controlador_veiculo = ControladorVeiculo(self)
+        self.__controlador_revisao = ControladorRevisao(self)
         self.__controlador_cliente = ControladorCliente(self)
 
 
