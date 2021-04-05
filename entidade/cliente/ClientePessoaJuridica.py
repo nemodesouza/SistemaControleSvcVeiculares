@@ -3,8 +3,8 @@ from entidade.veiculo.veiculo import Veiculo
  
 class ClientePessoaJuridica(AbstractCliente):
         
-    def __init__(self, codigo: int, nome: str, telefone: int,endereco: str, data_fundacao: str, cnpj: str, veiculo:Veiculo):
-            super().__init_(codigo, nome, telefone, endereco)
+    def __init__(self, codigo: int, nome: str, telefone: int,endereco: str, data_fundacao: str, cnpj: str, veiculo:str):
+            super().__init__(codigo, nome, telefone, endereco)
             self.__data_fundacao = data_fundacao
             self.__cnpj = cnpj
             self.__veiculo = veiculo
@@ -28,11 +28,11 @@ class ClientePessoaJuridica(AbstractCliente):
             self.cnpj = cnpj
 
     @property
-    def veiculo(Veiculo): #confirmar se é isto mesmo
+    def veiculo(self):
         return self.__veiculo
 
     @veiculo.setter
-    def veiculo(Veiculo): #confirmar se é isso mesmo
-        if isinstance(veiculo, entidade.veiculo.Veiculo):
+    def veiculo(self):
+        if isinstance(veiculo, str):
             self.__veiculo = veiculo
 

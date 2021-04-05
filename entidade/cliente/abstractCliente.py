@@ -1,32 +1,27 @@
-from abc import ABC, abstractmethod
 
-class AbstractCliente(ABC):
+
+class AbstractCliente:
     
-    @abstractmethod    
+    
     def __init__ (self, codigo: int, nome: str, telefone: int, endereco: str):
-        if isinstance (codigo, int):
+        if isinstance(codigo, int):
             self.__codigo = codigo
         if isinstance (nome, str):
-            self.__nome = mome
-        if isinstance (telefone, int):
+            self.__nome = nome
+        if isinstance(telefone, int):
             self.__telefone = telefone
-        if isinstance (endereco, str):
+        if isinstance(endereco, str):
             self.__endereco = endereco
     
     @property
-    def codigo(self) -> int:
+    def codigo(self):
         return self.__codigo
-        
     
     @codigo.setter
     def codigo(self, codigo:int):
-        
-        #gera número aleatório de código
-        #verifica se número já existe
-        #ver jeito de fazer um sequencial, pra economizar memória
-
-        pass
-    
+        if isinstance(codigo, int):
+            self.__codigo
+     
     @property		
     def nome(self) ->str:
         return self.__nome

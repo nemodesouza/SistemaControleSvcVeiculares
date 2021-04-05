@@ -1,10 +1,29 @@
 class TelaSistema:
 
     def tela_opcoes(self):
-        print("-------- Sistema Revisao de Veiculos ---------")
-        print("Escolha sua opcao")
-        print("1 - Veiculo")
+        print("")
+        print("")
+        print("====================================")
+        print("------------------------------------")
+        print("-------- SISTEMA DE CONTROLE -------")
+        print("------ DE SERVIÇOS VEICULARES ------")
+        print("------------------------------------")
+        print("====================================")
+        print("")
+        print("")
+        print("------- Selecione o assunto: -------")
+        print("1 - Veiculos")
         print("2 - Revisao")
-        print("0 - Finalizar sistema")
-        opcao = int(input("Escolha a opcao: ")) 
-        return opcao
+        print("3 - Clientes")
+        print("0 - Sair")
+
+
+        while True:
+            try:
+                opcao = int(input("Escolha a opção: "))
+
+            except ValueError:
+                print("Conteúdo Inválido. Digite o conteúdo correto.")
+            else:
+                return opcao
+
